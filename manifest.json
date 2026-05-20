@@ -3,13 +3,13 @@
   "name": "TechStock - Controle de Estoque de Eletrônicos",
   "icons": [
     {
-      "src": "https://images.unsplash.com/photo-1601524909162-be87252be298?q=80&w=192&auto=format&fit=crop",
+      "src": "./icon-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "https://images.unsplash.com/photo-1601524909162-be87252be298?q=80&w=512&auto=format&fit=crop",
+      "src": "./icon-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
