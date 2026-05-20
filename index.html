@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStock - Controle de Estoque</title>
+    
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <div class="header-title-box">
+                    <h1>TechStock</h1>
+                    <p>Manutenção & Vendas de Eletrônicos</p>
+                </div>
+            </div>
+        </header>
+
+        <div id="screen-list" class="screen active">
+            <div class="dashboard">
+                <div class="metric-card">
+                    <div class="value" id="dash-total-itens">0</div>
+                    <div class="label">Itens Totais</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" id="dash-valor-estoque">R$ 0</div>
+                    <div class="label">Val. Estoque</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value" id="dash-alerta-critico">0</div>
+                    <div class="label">Qtd. Baixa</div>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Buscar produto ou modelo...">
+            </div>
+
+            <div id="stock-list-container" class="stock-list"></div>
+
+            <button class="fab" aria-label="Adicionar novo item no estoque" onclick="navigateToForm()">
+                <span class="fab-content">+</span>
+            </button>
+        </div>
+
+        <div id="screen-form" class="screen">
+            <div class="form-header">
+                <button class="btn-back" onclick="navigateToList()">← Voltar</button>
+                <div class="form-title" id="form-screen-title">Novo Item</div>
+                <div class="form-header-spacer"></div>
+            </div>
+
+            <div id="form-error" class="error-message"></div>
+
+            <form id="product-form" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" id="form-id">
+                
+                <div class="form-group">
+                    <label for="form-nome">Nome do Item / Peça</label>
+                    <input type="text" id="form-nome" class="form-control" placeholder="Ex: Tela Frontal iPhone 11" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-modelo">Marca / Modelo Alvo</label>
+                    <input type="text" id="form-modelo" class="form-control" placeholder="Ex: Apple / Samsung G980" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-categoria">Categoria</label>
+                    <select id="form-categoria" class="form-control" required>
+                        <option value="Peça">Peça de Reposição</option>
+                        <option value="Aparelho">Aparelho / Celular</option>
+                        <option value="Acessório">Acessório</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-qtd">Quantidade em Estoque</label>
+                    <input type="number" id="form-qtd" class="form-control" min="0" placeholder="Ex: 5" required>
+                </div>
+
+                <div class="row-inputs">
+                    <div class="col-input">
+                        <div class="form-group">
+                            <label for="form-custo">Preço de Custo (R$)</label>
+                            <input type="number" id="form-custo" class="form-control" step="0.01" min="0" placeholder="0.00" required>
+                        </div>
+                    </div>
+                    <div class="col-input">
+                        <div class="form-group">
+                            <label for="form-venda">Preço de Venda (R$)</label>
+                            <input type="number" id="form-venda" class="form-control" step="0.01" min="0" placeholder="0.00" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Salvar no Estoque</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

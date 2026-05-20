@@ -1,0 +1,83 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --danger-light: #fee2e2;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background-color: var(--background); color: var(--text-main); display: block; min-height: 100vh; }
+.app-container { max-width: 500px; margin: 0 auto; background-color: var(--background); min-height: 100vh; position: relative; display: block; }
+header { background-color: var(--surface); padding: 16px; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow); display: block; }
+.header-content { display: table; width: 100%; }
+.header-title-box { display: table-cell; vertical-align: middle; }
+.header-title-box h1 { font-size: 20px; font-weight: 700; color: var(--text-main); }
+.header-title-box p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.screen { display: none; padding: 16px; padding-bottom: 90px; }
+.screen.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.dashboard { display: table; width: 100%; margin-bottom: 16px; border-collapse: separate; border-spacing: 8px 0; }
+.metric-card { display: table-cell; background-color: var(--surface); padding: 12px; border-radius: var(--radius); box-shadow: var(--shadow); width: 33.33%; text-align: center; }
+.metric-card .value { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.metric-card .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.search-container { margin-bottom: 16px; }
+.search-input { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background-color: var(--surface); outline: none; transition: border-color 0.2s; }
+.search-input:focus { border-color: var(--primary); }
+
+.product-card { background-color: var(--surface); border-radius: var(--radius); padding: 14px; margin-bottom: 12px; box-shadow: var(--shadow); position: relative; display: block; }
+.product-info-row { display: table; width: 100%; margin-bottom: 8px; }
+.product-main-details { display: table-cell; vertical-align: top; }
+.product-title { font-size: 15px; font-weight: 600; color: var(--text-main); }
+.product-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.badge-container { display: table-cell; vertical-align: top; text-align: right; width: 80px; }
+.badge { display: inline-block; padding: 4px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+.badge-piece { background-color: #dbeafe; color: #1e40af; }
+.badge-device { background-color: #dcfce7; color: #166534; }
+.badge-acc { background-color: #f3e8ff; color: #6b21a8; }
+.product-meta-row { display: table; width: 100%; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+.meta-item { display: table-cell; font-size: 13px; }
+.meta-item span { font-weight: 700; }
+.stock-status { font-weight: 600; }
+.status-ok { color: var(--success); }
+.status-low { color: var(--danger); }
+.actions-cell { display: table-cell; text-align: right; vertical-align: middle; }
+
+.btn-action { background: none; border: none; padding: 6px; margin-left: 8px; font-size: 14px; cursor: pointer; border-radius: 6px; transition: transform 0.1s ease; }
+.btn-action:active { transform: scale(0.85); }
+.btn-edit { color: var(--primary); }
+.btn-delete { color: var(--danger); }
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 14px; }
+
+.fab { position: fixed; bottom: 24px; left: 50%; transform: translateX(130px); background-color: var(--primary); color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4); border: none; cursor: pointer; z-index: 20; transition: transform 0.1s ease, background-color 0.2s; }
+.fab:active { transform: translateX(130px) scale(0.92); background-color: var(--primary-dark); }
+.fab-content { font-size: 32px; font-weight: 300; line-height: 1; margin-top: -2px; }
+@media(max-width: 500px) { .fab { left: auto; right: 24px; transform: none; } .fab:active { transform: scale(0.92); } }
+
+.form-header { display: table; width: 100%; margin-bottom: 20px; }
+.btn-back { display: table-cell; background: none; border: none; color: var(--primary); font-size: 14px; font-weight: 600; cursor: pointer; width: 60px; text-align: left; vertical-align: middle; transition: opacity 0.2s; }
+.btn-back:active { opacity: 0.6; }
+.form-title { display: table-cell; font-size: 18px; font-weight: 700; text-align: center; vertical-align: middle; }
+.form-header-spacer { display: table-cell; width: 60px; }
+.form-group { margin-bottom: 16px; display: block; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+.form-control { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background-color: var(--surface); outline: none; transition: border-color 0.2s; }
+.form-control:focus { border-color: var(--primary); }
+.row-inputs { display: table; width: 100%; border-collapse: separate; border-spacing: 12px 0; margin-left: -12px; margin-right: -12px; }
+.col-input { display: table-cell; width: 50%; }
+
+.btn-submit { width: 100%; background-color: var(--primary); color: white; padding: 14px; border: none; border-radius: var(--radius); font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 12px; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2); transition: transform 0.1s ease, background-color 0.2s; }
+.btn-submit:active { transform: scale(0.97); background-color: var(--primary-dark); }
+
+.error-message { display: none; background-color: var(--danger-light); color: var(--danger); padding: 12px; border-radius: var(--radius); font-size: 13px; font-weight: 600; margin-bottom: 16px; border: 1px solid rgba(239, 68, 68, 0.2); text-align: center; }

@@ -1,0 +1,23 @@
+{
+  "short_name": "TechStock",
+  "name": "TechStock - Controle de Estoque de Eletrônicos",
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1601524909162-be87252be298?q=80&w=192&auto=format&fit=crop",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1601524909162-be87252be298?q=80&w=512&auto=format&fit=crop",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#f1f5f9",
+  "theme_color": "#2563eb",
+  "display": "standalone",
+  "orientation": "portrait"
+}
